@@ -1,9 +1,9 @@
 <plat-foreach plat-context="posts">
     <div class="post">
-        <div class="ups">{{ data.ups }}</div>
-        <img class="thumbnail" src="{{ data.thumbnail }}">
-        <a class="title" href="http://www.reddit.com{{ data.permalink }}">{{ data.title }}</a>
-        <div class="author">by {{ data.author }}</div>
-        <div class="num_comments">{{ data.num_comments }} comments</div>
+        <div class="ups">{{ ups }}</div>
+        <img class="thumbnail" src="{{ thumbnail }}">
+        <a class="title" href="http://www.reddit.com{{ permalink }}">{{ title }}</a>
+        <div class="author">by {{ author }}</div>
+        <div class="num_comments">{{ num_comments }} comments</div>
     </div>
 </plat-foreach>
