@@ -16,11 +16,8 @@ export default class DetailViewControl extends BaseViewControl {
     }
     
     navigatedTo(params:any):void {
-        // get post id
         this.context.id = params.id;
-        console.log(this.context.id);
         
-        // get all posts
         this.postsRepo.getSinglePost(this.context.id).then((success) => {
             console.log(success);
             this.context.post = success;
