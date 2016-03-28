@@ -7,7 +7,6 @@ export default class DetailViewControl extends BaseViewControl {
     templateString: string = require('./detail.vc.html');
 
     context: any = {
-        posts: <any>[],
         post: {},
         id: ""
     };
@@ -22,23 +21,12 @@ export default class DetailViewControl extends BaseViewControl {
         console.log(this.context.id);
         
         // get all posts
-        this.postsRepo.getRedditList().then((success) => {
+        this.postsRepo.getSinglePost(this.context.id).then((success) => {
             console.log(success);
-            this.context.posts = success;
-            // find post with that id
-            this.findSinglePost();
+            this.context.post = success;
         }, (err) => {
             console.log(err);
         });
-    }
-    
-    findSinglePost() {
-        for (let i = 0; i < this.context.posts.length; i++) {
-            if (this.context.posts[i].id == this.context.id) {
-                this.context.post = this.context.posts[i];
-            }
-        }
-        console.log(this.context.post);
     }
     
     toggleZoom() {

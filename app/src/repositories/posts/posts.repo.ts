@@ -4,6 +4,8 @@ import APIService from '../../services/api/api.svc';
 
 export default class PostsRepository extends BaseRepository {
     
+    post:any = [];
+    
     constructor(private apiSvc:APIService) {
         super()
     }
@@ -45,6 +47,23 @@ export default class PostsRepository extends BaseRepository {
             };
         };
         return filtered;
+    }
+    
+    getSinglePost(id:any) {
+        return this.getRedditList().then((success) => {
+            let posts:any = success;
+            
+            for (let i = 0; i < posts.length; i++) {
+                if (success[i].id == id) {
+                    this.post = posts[i];
+                    return this.post;
+                }
+            }
+        }, (err) => {
+            throw err;
+        })
+        
+        
     }
 }
 
