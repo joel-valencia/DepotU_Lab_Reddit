@@ -28,8 +28,8 @@ export default class PostsRepository extends BaseRepository {
                 image_full = preview.images[0].source.url;
                 image_medium = preview.images[0].resolutions[3].url;
             } else {
-                image_full = "not here";
-                image_medium = "not here";
+                image_full = "not found";
+                image_medium = "not found";
             }
             
             //console.log(i, image_full, image_medium, original[i].data.title);
@@ -43,6 +43,7 @@ export default class PostsRepository extends BaseRepository {
                 ups:            original[i].data.ups,
                 id:             original[i].data.id,
                 url:            original[i].data.url,
+                selftext:       original[i].data.selftext,
                 image_full:     image_full,
                 image_medium:   image_medium
             };
