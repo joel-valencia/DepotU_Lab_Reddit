@@ -5,7 +5,7 @@ export default class APIService extends BaseService {
         getRedditList():async.IAjaxThenable<any> {
         return this.http.json({
             method: 'GET',
-            url: this.host + '/aww.json',
+            url: this.host + '/mildlyinteresting/.json',
         }).then(
             (success) => {
                 //console.log(success);
