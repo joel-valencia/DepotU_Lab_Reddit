@@ -3,6 +3,9 @@
     <div class="author">by {{ post.author }}</div>
     <div class="selftext">{{ post.selftext }}</div>
     <a class="permalink num_comments" href="https://www.reddit.com{{ post.permalink }}">{{ post.num_comments }} comments</a>
+
     <a class="url" href="{{ post.url }}">Original Link</a>
-    <img class="image_full" src="{{ post.image_full }}">
+    
+    <div class="message">Click to toggle zoom:</div>
+    <img id="image_full" class="zoom_out" src="{{ post.image_full }}" plat-tap="toggleZoom()">
 </div>

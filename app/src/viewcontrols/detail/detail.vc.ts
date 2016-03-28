@@ -40,6 +40,15 @@ export default class DetailViewControl extends BaseViewControl {
         }
         console.log(this.context.post);
     }
+    
+    toggleZoom() {
+        let currentClass = document.getElementById("image_full").className;
+        if (currentClass == "") {
+            document.getElementById("image_full").className = "zoom_out";
+        } else {
+            document.getElementById("image_full").className = ""
+        }
+    }
 }
 
 register.viewControl('detail-vc', DetailViewControl, [PostsRepository]);
