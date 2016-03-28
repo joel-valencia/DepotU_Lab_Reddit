@@ -9,7 +9,7 @@ export default class APIService extends BaseService {
         }).then(
             (success) => {
                 //console.log(success);
-                return success.response;
+                return success.response.data.children;
             },
             (error): any => {
                 throw error.response.message;

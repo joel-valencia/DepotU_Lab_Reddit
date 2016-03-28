@@ -15,8 +15,8 @@ export default class HomeViewControl extends BaseViewControl {
     
     navigatedTo():void {
         this.postsRepo.getRedditList().then((success) => {
-            console.log(success.data.children);
-            this.context.posts = success.data.children;
+            console.log(success);
+            this.context.posts = success;
         }, (err) => {
             console.log(err);
         });
