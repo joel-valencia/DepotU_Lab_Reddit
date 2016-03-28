@@ -1,6 +1,7 @@
 <plat-foreach plat-context="posts">
     <div class="post">
-        <div class="thumbnail"><img src="{{ data.thumbnail }}"></div>
-        <div class="permalink"><a href="http://www.reddit.com{{ data.permalink }}">{{ data.title }}</a></div>
+        <img class = "thumbnail" src="{{ data.thumbnail }}">
+        <a class="permalink" href="http://www.reddit.com{{ data.permalink }}">{{ data.title }}</a>
+        <div class="author">by {{ data.author }}</div>
     </div>
 </plat-foreach>
