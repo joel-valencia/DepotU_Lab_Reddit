@@ -8,7 +8,7 @@ export default class APIService extends BaseService {
             url: this.host + '/aww.json',
         }).then(
             (success) => {
-                console.log(success);
+                //console.log(success);
                 return success.response;
             },
             (error): any => {

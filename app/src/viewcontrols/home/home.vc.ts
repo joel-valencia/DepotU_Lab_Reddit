@@ -5,7 +5,9 @@ import PostsRepository from '../../repositories/posts/posts.repo';
 export default class HomeViewControl extends BaseViewControl {
     templateString: string = require('./home.vc.html');
 
-    context: any = {};
+    context = {
+        posts: <any>[]
+    };
     
     constructor(private postsRepo:PostsRepository) {
         super()
@@ -13,7 +15,8 @@ export default class HomeViewControl extends BaseViewControl {
     
     navigatedTo():void {
         this.postsRepo.getRedditList().then((success) => {
-            console.log(success);
+            console.log(success.data.children);
+            this.context.posts = success.data.children;
         }, (err) => {
             console.log(err);
         });
