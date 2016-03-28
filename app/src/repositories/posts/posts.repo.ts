@@ -22,14 +22,11 @@ export default class PostsRepository extends BaseRepository {
         for (let i = 0; i < original.length; i++) {
             let preview:any = original[i].data.preview;
             let image_full:any = null;
-            let image_medium:any = null;
             
-            if (preview != undefined && preview.images[0].resolutions[3] != undefined) {
+            if (preview != undefined) {
                 image_full = preview.images[0].source.url;
-                image_medium = preview.images[0].resolutions[3].url;
             } else {
                 image_full = "not found";
-                image_medium = "not found";
             }
             
             //console.log(i, image_full, image_medium, original[i].data.title);
@@ -44,8 +41,7 @@ export default class PostsRepository extends BaseRepository {
                 id:             original[i].data.id,
                 url:            original[i].data.url,
                 selftext:       original[i].data.selftext,
-                image_full:     image_full,
-                image_medium:   image_medium
+                image_full:     image_full
             };
         };
         return filtered;
