@@ -5,7 +5,7 @@
 <div class="detail">
     <div class="ups">{{ post.ups }}</div>
     <div class="title">{{ post.title }}</div>
-    <div class="author">submitted {{ @formatter.formatDate(post.created_utc) }} by {{ post.author }}</div>
+    <div class="subtitle">submitted {{ @formatter.formatDate(post.created_utc) }} by {{ post.author }}</div>
     <div class="selftext">{{ post.selftext }}</div>
     <a class="permalink num_comments" href="{{ post.permalink }}">{{ post.num_comments }} comments</a>
 

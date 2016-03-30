@@ -7,7 +7,7 @@
         <div class="ups">{{ ups }}</div>
         <img class="thumbnail" src="{{ thumbnail }}">
         <a class="title" href="{{ id }}">{{ title }}</a>
-        <div class="author">submitted {{ @formatter.formatDate(created_utc) }} by {{ author }}</div>
+        <div class="subtitle">submitted {{ @formatter.formatDate(created_utc) }} by {{ author }}</div>
         <a class="num_comments" href="{{ permalink }}">{{ num_comments }} comments</a>
     </div>
 </plat-foreach>
