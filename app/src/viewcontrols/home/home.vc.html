@@ -1,9 +1,13 @@
+<plat-resources>
+    <injectable alias="formatter">formatter</injectable>
+</plat-resources>
+
 <plat-foreach plat-context="posts">
     <div class="post">
         <div class="ups">{{ ups }}</div>
         <img class="thumbnail" src="{{ thumbnail }}">
         <a class="title" href="{{ id }}">{{ title }}</a>
-        <div class="author">by {{ author }}</div>
+        <div class="author">submitted {{ @formatter.formatDate(created_utc) }} by {{ author }}</div>
         <a class="num_comments" href="{{ permalink }}">{{ num_comments }} comments</a>
     </div>
 </plat-foreach>

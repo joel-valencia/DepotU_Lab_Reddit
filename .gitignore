@@ -28,6 +28,7 @@ node_modules
 
 # JS, css, and map files
 *.js
+!moment.js
 *.css
 *.map
 

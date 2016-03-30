@@ -43,6 +43,7 @@ export default class PostsRepository extends BaseRepository {
                 id:             original[i].data.id,
                 url:            original[i].data.url,
                 selftext:       original[i].data.selftext,
+                created_utc:    original[i].data.created_utc,
                 image_full:     image_full
             };
         };
