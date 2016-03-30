@@ -35,7 +35,7 @@ export default class PostsRepository extends BaseRepository {
             
             filtered[i] = {
                 title:          original[i].data.title,
-                permalink:      original[i].data.permalink,
+                permalink:      "https://www.reddit.com" + original[i].data.permalink,
                 author:         original[i].data.author,
                 num_comments:   original[i].data.num_comments,
                 thumbnail:      original[i].data.thumbnail,
